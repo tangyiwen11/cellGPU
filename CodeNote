@@ -42,3 +42,13 @@ main spv
     globalTriangulationCGAL();
     resetLists();
     allDelSets();
+
+
+
+
+void Simple2DActiveCell::initializeSimple2DActiveCell(int n)
+-> Simple2DCell::initializeSimple2DCell(int n)
+-> //setting cell positions randomly also auto-generates a square box with L = sqrt(Ncells)
+    setCellPositionsRandomly();
+    or 
+    Simple2DCell::setCellPositions(vector<Dscalar2> newCellPositions)
