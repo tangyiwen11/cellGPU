@@ -1,1 +1,44 @@
+#### Data Structure
 
+vector<Dscalar2>
+
+//!return a Dscalar2 from two Dscalars
+HOSTDEVICE Dscalar2 make_Dscalar2(Dscalar x, Dscalar y)
+    {
+    Dscalar2 ans;
+    ans.x =x;
+    ans.y=y;
+    return ans;
+    }
+
+//!component-wise addition of two Dscalar2s
+HOSTDEVICE Dscalar2 operator+(const Dscalar2 &a, const Dscalar2 &b)
+    {
+    return make_Dscalar2(a.x+b.x,a.y+b.y);
+    }
+    
+vector<Dscalar2> velocities(Ncells,make_Dscalar2(0.0,0.0));
+
+vector<Dscalar2> answer;
+answer.push_back(make_Dscalar2(rmin+0.5*binWidth,value));
+
+
+#### Coding flow
+main spv
+-> VoronoiQuadraticEnergy::VoronoiQuadraticEnergy(int n,Dscalar A0, Dscalar P0,bool reprod)
+-> VoronoiQuadraticEnergy::initializeVoronoiQuadraticEnergy(int n)
+-> voronoiModelBase::initializeVoronoiModelBase(int n)
+-> void Simple2DActiveCell::initializeSimple2DActiveCell(int n)
+    //set circumcenter array size
+    circumcenters.resize(2*(Ncells+10));
+    NeighIdxs.resize(6*(Ncells+10));
+        //DelaunayLoc initialization
+    delLoc.setBox(Box);
+    resetDelLocPoints();
+
+    //make a full triangulation
+    completeRetriangulationPerformed = 1;
+    cellNeighborNum.resize(Ncells);
+    globalTriangulationCGAL();
+    resetLists();
+    allDelSets();
