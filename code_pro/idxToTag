@@ -1,0 +1,18 @@
+.h
+
+        //(yw) ! Report the original index ii for the current index pIdx, matching output format.
+        int reportidx2tag(int pIdx); 
+        
+       /////////////(yw)//////////////////
+int Simple2DCell::reportidx2tag(int pIdx)
+    {
+    int ii = idxToTag[pIdx]; //pIdx is the current position of the cell that was originally ii
+    return ii;
+    };
+
+
+//////////////////////////////////
+
+
+
+                            cdivdata << timestep-1 << "\t" << spv->reportidx2tag(cellid) << "\t" << spv->reportidx2tag(cdcellid) << endl;
