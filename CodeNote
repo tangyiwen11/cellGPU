@@ -42,6 +42,23 @@ main spv
     globalTriangulationCGAL();
     resetLists();
     allDelSets();
+    
+    
+    
+    
+     //1130
+    int ni;
+//    Dscalar x;
+//    Dscalar y;
+//    vector<Dscalar2> newCellPositions(Ncells);
+//    Dscalar boxsize = sqrt((Dscalar)Ncells);
+//    Box->setSquare(boxsize,boxsize);
+//    for (int ni = 0; ni < Ncells; ++ni)
+//        x = noise.getRealUniform(0.0,boxsize);
+//        y = noise.getRealUniform(0.0,boxsize);
+//        newCellPositions[ni] = make_Dscalar2(x,y);
+//    setCellPositions(newCellPositions);
+    //
 
 
 
